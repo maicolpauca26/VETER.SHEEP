@@ -1,0 +1,50 @@
+// ============================================================
+// Bootstrap 5.3 personalizado con SASS (Unidad 4 + Unidad 2)
+// Se sobrescriben las variables de Bootstrap con la paleta de
+// VETER.SHEEP ANTES de importar sus módulos; solo se importan los
+// componentes que usa el sitio (menos peso, sin conflicto con
+// el .btn propio escrito en LESS).
+// ============================================================
+$verde:   #2E5C4A;
+$naranja: #F2A541;
+$gris:    #F7F7F2;
+
+// --- Variables de Bootstrap sobrescritas ---
+$primary:   $verde;
+$warning:   $naranja;
+$light:     $gris;
+$body-color: #2B2B2B;
+$font-family-sans-serif: 'Inter', sans-serif;
+$headings-font-family:   'Poppins', sans-serif;
+$headings-color:         $verde;
+$border-radius:    .75rem;
+$border-radius-lg: 1rem;
+$enable-shadows: true;
+$accordion-button-active-bg:    #e8efe9;
+$accordion-button-active-color: $verde;
+$accordion-button-focus-box-shadow: 0 0 0 .25rem rgba($verde, .25);
+$form-select-focus-border-color: $verde;
+$input-focus-border-color: $verde;
+$input-focus-box-shadow: 0 0 0 .25rem rgba($verde, .2);
+$modal-content-border-radius: 1rem;
+
+// --- Módulos de Bootstrap (solo los necesarios) ---
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";

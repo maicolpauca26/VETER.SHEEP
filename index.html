@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VETER.SHEEP | Clínica Veterinaria en Huancayo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap-custom.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/botones.css">
+<link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__barra">
+    <a href="#inicio" class="header__logo"><span>🐑</span> VETER.SHEEP</a>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="header__burger" aria-label="Abrir menú">☰</label>
+    <nav class="header__nav" aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li><li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li><li><a href="#video">Video</a></li><li><a href="#equipo">Equipo</a></li>
+        <li><a href="#horario">Horario</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalCita">Agendar cita</button>
+  </div>
+</header>
+<main>
+  <section class="hero" id="inicio">
+    <div class="hero__contenido">
+      <div class="hero__texto">
+        <span class="etiqueta">● Atención profesional en Huancayo</span>
+        <h1>Cuidado médico de <span>alta fidelidad</span> para tu mascota</h1>
+        <p>En VETER.SHEEP combinamos el rigor de la medicina veterinaria moderna con la cercanía de un equipo que adora a los animales.</p>
+        <div class="hero__botones"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalCita">Agendar una cita</button><a href="#servicios" class="btn--borde">Nuestros servicios</a></div>
+        <div class="hero__stats">
+          <div><strong>4,800+</strong>Pacientes felices</div><div><strong>8</strong>Especialistas</div><div><strong>24/7</strong>Emergencias</div>
+        </div>
+      </div>
+      <picture>
+        <source media="(min-width:768px)" srcset="img/hero.svg">
+        <img src="img/hero-movil.svg" alt="Veterinaria con un perro" width="480" height="400">
+      </picture>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="container">
+      <h2 class="titulo-seccion">Servicios veterinarios integrales</h2>
+      <div class="servicios__lista">
+        <article class="servicio"><span class="servicio__icono">🩺</span><h3>Consulta general</h3><p>Evaluaciones completas y chequeos preventivos.</p></article>
+        <article class="servicio"><span class="servicio__icono">💉</span><h3>Vacunación</h3><p>Esquemas de vacunación para cachorros, adultos y senior.</p></article>
+        <article class="servicio"><span class="servicio__icono">✂️</span><h3>Peluquería canina</h3><p>Estética profesional y baños medicados.</p></article>
+        <article class="servicio"><span class="servicio__icono">🚑</span><h3>Emergencias</h3><p>Soporte de urgencia con médicos de guardia.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="nosotros" id="nosotros">
+    <div class="nosotros__contenido">
+      <img src="img/nosotros.svg" alt="Mascotas de VETER.SHEEP" loading="lazy">
+      <div>
+        <span class="etiqueta">Sobre nosotros</span>
+        <h2>Cercanía y profesionalismo médico en San Agustín de Cajas</h2>
+        <div class="nosotros__tarjeta"><h3>Nuestra Misión</h3><p>Brindar atención veterinaria de calidad, cercana y confiable a las mascotas de la zona.</p></div>
+        <div class="nosotros__tarjeta"><h3>Nuestra Visión</h3><p>Ser la veterinaria de referencia en San Agustín de Cajas, reconocida por la calidad de su atención.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video" id="video">
+    <h2 class="titulo-seccion">Conoce nuestra clínica</h2>
+    <div class="video__marco">
+      <!-- Reemplaza video/clinica.mp4 e img/video-poster.svg por los tuyos -->
+      <video controls preload="metadata" poster="img/video-poster.svg" playsinline>
+        <source src="video/clinica.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+      </video>
+    </div>
+    <p class="video__nota">Video de ejemplo: cámbialo por el video real de VETER.SHEEP.</p>
+  </section>
+
+  <section id="equipo">
+    <h2 class="titulo-seccion">Especialistas comprometidos con el bienestar</h2>
+    <div class="equipo__lista">
+      <article class="miembro"><img src="img/equipo1.svg" alt="Dra. Lucía Mendoza" loading="lazy"><div class="miembro__info"><h3>Dra. Lucía Mendoza</h3><p>Fundadora &amp; Médica Veterinaria Principal</p><p>Medicina Interna y Cirugía de tejidos blandos.</p></div></article>
+      <article class="miembro"><img src="img/equipo2.svg" alt="Dr. Carlos Santiváñez" loading="lazy"><div class="miembro__info"><h3>Dr. Carlos Santiváñez</h3><p>Especialista en Emergencias y Cirugía</p><p>Cuidados críticos y cardiología animal.</p></div></article>
+      <article class="miembro"><img src="img/equipo3.svg" alt="Dra. Andrea Delgado" loading="lazy"><div class="miembro__info"><h3>Dra. Andrea Delgado</h3><p>Peluquería Médica y Dermatología</p><p>Cuidado dérmico e higiene canina y felina.</p></div></article>
+    </div>
+  </section>
+
+  <section class="horario" id="horario">
+    <h2 class="titulo-seccion">Tu mascota siempre atendida</h2>
+    <div class="horario__tabla">
+      <div class="horario__fila"><strong>Lunes a Viernes</strong><span>08:00 – 20:00</span><span>Consulta General &amp; Especialidades</span></div>
+      <div class="horario__fila"><strong>Sábados</strong><span>09:00 – 18:00</span><span>Preventiva &amp; Estética</span></div>
+      <div class="horario__fila"><strong>Domingos y Feriados</strong><span>10:00 – 14:00</span><span class="emergencia">🚨 Emergencias &amp; Guardia</span></div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-lg-5">
+          <span class="etiqueta">Resolvemos tus dudas</span>
+          <h2 class="mt-2">Preguntas frecuentes</h2>
+          <p class="mt-3">Lo que más nos consultan los dueños de mascotas de San Agustín de Cajas. Si tu duda no está aquí, escríbenos.</p>
+          <span class="badge text-bg-primary me-1">Consulta</span><span class="badge text-bg-warning me-1">Vacunas</span><span class="badge text-bg-primary">Emergencias</span>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="accordion" id="acordeonFaq">
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">¿Necesito cita previa para una consulta?</button></h3>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#acordeonFaq"><div class="accordion-body">Recomendamos agendar tu cita con el botón "Agendar cita" o por WhatsApp para reducir tu tiempo de espera. Las emergencias se atienden sin cita.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">¿A qué edad se vacuna a un cachorro?</button></h3>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq"><div class="accordion-body">El esquema de vacunación inicia en las primeras semanas de vida y se completa con refuerzos. En la consulta se define el calendario según la edad y el estado de salud de tu mascota.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">¿Atienden emergencias en domingos y feriados?</button></h3>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq"><div class="accordion-body">Sí. Contamos con atención de emergencias y guardia los domingos y feriados. Revisa la sección de horarios o contáctanos por WhatsApp.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">¿Ofrecen peluquería para gatos?</button></h3>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq"><div class="accordion-body">Nuestro servicio de peluquería está enfocado en perros, con estética profesional y baños medicados. Consúltanos por WhatsApp para casos de gatos.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="contacto__contenido">
+      <div>
+        <h2>¿Tienes alguna duda o emergencia?</h2>
+        <p>📍 Av. Leoncio Prado, San Agustín de Cajas, Huancayo, Junín.</p>
+        <p>💬 WhatsApp: consulta de disponibilidad y citas por chat.</p>
+        <p>✉️ Correo: consultas y convenios institucionales.</p>
+      </div>
+      <form class="formulario needs-validation" id="formContacto" action="#" method="post" novalidate>
+        <h3>Formulario de contacto</h3>
+        <label for="nombre" class="form-label">Nombre completo</label><input id="nombre" class="form-control" type="text" placeholder="Ingresa tu nombre" required>
+        <label for="correo" class="form-label">Correo electrónico</label><input id="correo" class="form-control" type="email" placeholder="ejemplo@correo.com" required>
+        <div class="invalid-feedback">Ingresa un nombre y un correo válidos.</div>
+        <label for="mensaje" class="form-label">Mensaje</label><textarea id="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+        <button type="submit" class="btn">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer__cols">
+    <div><h4>VETER.SHEEP</h4><p>Clínica veterinaria comprometida con el cuidado y la salud de las mascotas en Huancayo.</p></div>
+    <div><h4>Nuestra Clínica</h4><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#equipo">Equipo</a></div>
+    <div><h4>Atención</h4><a href="#horario">Horarios</a><a href="#contacto">Contacto</a></div>
+    <div><h4>Ubicación</h4><p>Av. Leoncio Prado, San Agustín de Cajas, Huancayo, Junín.</p></div>
+  </div>
+  <small>© 2026 VETER.SHEEP Clínica Veterinaria. Todos los derechos reservados.</small>
+</footer>
+<a href="#contacto" class="wsp wsp--lg" aria-label="WhatsApp">💬</a>
+
+<!-- Modal de Bootstrap: agendar cita -->
+<div class="modal fade" id="modalCita" tabindex="-1" aria-labelledby="modalCitaTitulo" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="modalCitaTitulo">Agendar una cita</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <form id="formCita" class="needs-validation" novalidate>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-12 col-md-6"><label for="citaDueno" class="form-label">Tu nombre</label><input type="text" class="form-control" id="citaDueno" required></div>
+            <div class="col-12 col-md-6"><label for="citaMascota" class="form-label">Nombre de la mascota</label><input type="text" class="form-control" id="citaMascota" required></div>
+            <div class="col-12 col-md-6"><label for="citaServicio" class="form-label">Servicio</label>
+              <select class="form-select" id="citaServicio" required><option value="" selected disabled>Elige un servicio</option><option>Consulta general</option><option>Vacunación</option><option>Peluquería canina</option><option>Emergencia</option></select></div>
+            <div class="col-12 col-md-6"><label for="citaFecha" class="form-label">Fecha preferida</label><input type="date" class="form-control" id="citaFecha" required></div>
+            
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn--borde" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn">Confirmar cita</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Toast de Bootstrap: confirmación -->
+<div class="toast-container position-fixed bottom-0 start-0 p-3">
+  <div id="toastOk" class="toast align-items-center text-bg-primary border-0" role="status" aria-live="polite" aria-atomic="true">
+    <div class="d-flex"><div class="toast-body" id="toastTexto">¡Listo!</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button></div>
+  </div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

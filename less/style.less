@@ -1,0 +1,112 @@
+@import "_variables.less";
+@import "_mixins.less";
+
+// ===== Animaciones (con prefijo -webkit- para compatibilidad) =====
+@-webkit-keyframes fadeUp{ from{opacity:0;-webkit-transform:translateY(30px)} to{opacity:1;-webkit-transform:none} }
+@keyframes fadeUp{ from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:none} }
+@-webkit-keyframes rebote{ 0%,100%{-webkit-transform:translateY(0)} 50%{-webkit-transform:translateY(-8px)} }
+@keyframes rebote{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes latido{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{ font-family:@f-cuerpo; color:@texto; background:@blanco; line-height:1.6; }
+h1,h2,h3{ font-family:@f-titulo; color:@verde; line-height:1.2; }
+img,picture{ max-width:100%; height:auto; display:block; }
+section{ padding:3.5rem 1.2rem; }
+.container{ max-width:1100px; margin:0 auto; }
+.etiqueta{ color:@naranja; font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:1px; }
+.titulo-seccion{ text-align:center; font-size:clamp(1.6rem,4vw,2.4rem); margin-bottom:2rem; }
+.btn{ .button-variant(@naranja); }
+.btn--borde{ .button-variant(@blanco,@verde); border-color:@verde; }
+
+// ===== Header / Nav (Flexbox) =====
+.header{ position:-webkit-sticky; position:sticky; top:0; z-index:10; background:@blanco; box-shadow:0 2px 8px rgba(0,0,0,.08);
+  &__barra{ .flex-between(); max-width:1100px; margin:0 auto; padding:.8rem 1.2rem; flex-wrap:wrap; }
+  &__logo{ font-family:@f-titulo; font-weight:700; color:@verde; font-size:1.3rem; text-decoration:none;
+    span{ display:inline-block; .animation(rebote 2s ease-in-out infinite); } }
+  &__nav{ display:none; width:100%; order:5; ul{ list-style:none; display:flex; flex-direction:column; gap:.8rem; padding:1rem 0; }
+    a{ color:@texto; text-decoration:none; font-weight:500; position:relative; transition:color .3s;
+      &::after{ content:""; position:absolute; left:0; bottom:-4px; width:100%; height:2px; background:@naranja; .transform(scaleX(0)); transition:transform .3s; }
+      &:hover{ color:@verde; &::after{ .transform(scaleX(1)); } } } }
+  &__burger{ font-size:1.6rem; cursor:pointer; }
+}
+#menu-toggle{ display:none; }
+#menu-toggle:checked ~ .header__nav{ display:block; }
+.header .btn{ display:none; }
+.respond-tablet({
+  .header__burger{ display:none; }
+  .header__nav{ display:block; width:auto; order:0; ul{ flex-direction:row; padding:0; gap:1.4rem; } }
+  .header .btn{ display:inline-block; padding:.5rem 1.2rem; }
+});
+
+// ===== Hero =====
+.hero{ background:@gris;
+  &__contenido{ max-width:1100px; margin:0 auto; display:flex; flex-direction:column; gap:2rem; align-items:center; }
+  h1{ font-size:clamp(2rem,6vw,3.2rem); margin:.6rem 0 1rem; span{ color:@naranja; } }
+  &__texto{ .animation(fadeUp 1s ease both); }
+  &__botones{ display:flex; gap:.8rem; flex-wrap:wrap; margin:1.5rem 0; }
+  &__stats{ display:flex; gap:2rem; strong{ display:block; font-family:@f-titulo; color:@verde; font-size:1.5rem; } }
+  img{ border-radius:@radio; border:4px solid @verde; .animation(fadeUp 1.4s ease both); }
+}
+.respond-tablet({ .hero__contenido{ flex-direction:row; > *{ flex:1; } } });
+
+// ===== Servicios (Grid con fallback Flexbox) =====
+.servicios__lista{ display:-webkit-box; display:flex; flex-wrap:wrap; gap:1.2rem; > article{ flex:1 1 220px; } }
+@supports (display:grid){
+  .servicios__lista{ display:grid; grid-template-columns:1fr; > article{ flex:none; }
+    .respond-tablet({ grid-template-columns:repeat(2,1fr); });
+    .respond-desktop({ grid-template-columns:repeat(4,1fr); }); }
+}
+.servicio{ .card-base(); background:@gris;
+  &__icono{ font-size:2rem; display:inline-block; transition:transform .4s; }
+  &:hover &__icono{ .transform(rotate(15deg) scale(1.2)); }
+  h3{ margin:.5rem 0; } }
+
+// ===== Nosotros (Flexbox) =====
+.nosotros{ background:@gris;
+  &__contenido{ max-width:1100px; margin:0 auto; display:flex; flex-direction:column; gap:2rem; align-items:center; }
+  img{ border-radius:50%; border:6px solid @naranja; max-width:320px; width:100%; }
+  &__tarjeta{ background:@blanco; border-radius:12px; padding:1rem; margin-top:1rem; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+}
+.respond-desktop({ .nosotros__contenido{ flex-direction:row; > *{ flex:1; } } });
+
+// ===== Equipo (Flexbox wrap) =====
+.equipo__lista{ max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1.2rem; justify-content:center; }
+.miembro{ .card-base(); flex:1 1 260px; max-width:340px; padding:0; overflow:hidden;
+  img{ width:100%; transition:transform .5s; } &:hover img{ .transform(scale(1.08)); }
+  &__info{ padding:1rem 1.2rem; p:first-of-type{ color:@naranja; font-weight:600; font-size:.9rem; } } }
+
+// ===== Horario =====
+.horario{ background:@verde; h2{ color:@blanco; }
+  &__tabla{ max-width:700px; margin:0 auto; background:@blanco; border-radius:@radio; border:2px solid @naranja; padding:1rem 1.5rem; }
+  &__fila{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:.5rem; padding:.8rem 0; border-bottom:1px solid #eee; &:last-child{ border:0; } }
+  .emergencia{ .animation(latido 1.6s ease-in-out infinite); display:inline-block; }
+}
+
+// ===== Contacto =====
+.contacto__contenido{ max-width:1100px; margin:0 auto; display:grid; gap:2rem; .respond-tablet({ grid-template-columns:1fr 1fr; }); }
+.formulario{ .card-base(); background:@gris; label{ display:block; font-weight:600; margin-top:.8rem; }
+  input,textarea{ width:100%; padding:.7rem; border:1px solid #ccc; border-radius:8px; font:inherit; transition:border-color .3s, box-shadow .3s;
+    &:focus{ outline:none; border-color:@verde; box-shadow:0 0 0 3px lighten(@verde,45%); } }
+  .btn{ width:100%; margin-top:1rem; background:@verde; color:@blanco; border-color:@verde; } }
+
+// ===== Video responsivo =====
+.video__marco{ max-width:900px; margin:0 auto; aspect-ratio:16/9; border-radius:@radio; overflow:hidden; border:4px solid @verde; background:#000;
+  -webkit-box-shadow:0 10px 30px rgba(0,0,0,.2); box-shadow:0 10px 30px rgba(0,0,0,.2);
+  video,iframe{ width:100%; height:100%; display:block; object-fit:cover; border:0; } }
+.video__nota{ text-align:center; margin-top:1rem; color:#666; font-size:.9rem; }
+// ===== Integración con Bootstrap (Unidad 4) =====
+// Bootstrap aporta Grid de 12 columnas, Accordion, Modal, Toast y formularios;
+// aquí solo se ajusta para que conviva con los estilos propios.
+.btn{ font:inherit; font-weight:600; line-height:1.6; }
+.faq{ background:@gris;
+  .accordion-item{ border-radius:@radio; overflow:hidden; margin-bottom:.8rem; border:1px solid darken(@gris,8%); }
+  .accordion-button{ font-family:@f-titulo; font-weight:600; transition:background .3s; }
+  .badge{ font-family:@f-cuerpo; }
+}
+.modal-content{ border-top:6px solid @naranja; }
+.formulario .form-control{ background:@blanco; }
+// (El footer está escrito en SASS: ver scss/footer.scss)
+
+@media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }

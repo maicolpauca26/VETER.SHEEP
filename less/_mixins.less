@@ -1,0 +1,23 @@
+// Media queries (mobile-first)
+.respond-tablet(@r){ @media (min-width:@bp-tablet){ @r(); } }
+.respond-desktop(@r){ @media (min-width:@bp-desktop){ @r(); } }
+// Flexbox
+.flex-center(){ display:flex; align-items:center; justify-content:center; }
+.flex-between(){ display:flex; align-items:center; justify-content:space-between; }
+// Compatibilidad entre navegadores (prefijos)
+.transform(@v){ -webkit-transform:@v; -ms-transform:@v; transform:@v; }
+.animation(@v){ -webkit-animation:@v; animation:@v; }
+// Tarjeta con transición + transformación
+.card-base(){
+  background:@blanco; border-radius:@radio; padding:@espacio;
+  -webkit-box-shadow:0 4px 14px rgba(0,0,0,.08); box-shadow:0 4px 14px rgba(0,0,0,.08);
+  -webkit-transition:transform .3s ease, box-shadow .3s ease; transition:transform .3s ease, box-shadow .3s ease;
+  &:hover{ .transform(translateY(-8px) scale(1.02)); box-shadow:0 14px 28px rgba(46,92,74,.22); }
+}
+// Botones reutilizables
+.button-variant(@bg,@fg:@texto){
+  display:inline-block; padding:.8rem 1.6rem; border-radius:50px; border:2px solid @bg;
+  background:@bg; color:@fg; font-weight:600; text-decoration:none; cursor:pointer;
+  transition:background .3s, transform .3s;
+  &:hover{ background:darken(@bg,8%); .transform(translateY(-3px) rotate(-1deg)); }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "drsheep",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "less": "lessc less/style.less css/style.css",
+    "sass:wsp": "sass scss/botones.scss css/botones.css",
+    "sass:footer": "sass scss/footer.scss css/footer.css",
+    "sass:bootstrap": "sass --load-path=node_modules --style=compressed --quiet-deps --silence-deprecation=import --no-source-map scss/bootstrap-custom.scss css/bootstrap-custom.css",
+    "build": "npm run less && npm run sass:wsp && npm run sass:footer && npm run sass:bootstrap"
+  },
+  "devDependencies": { "bootstrap": "^5.3.3", "less": "^4.2.0", "sass": "^1.77.0" }
+}
